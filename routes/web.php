@@ -59,7 +59,7 @@ Route::post('/create', function (\Illuminate\Http\Request $request) {
 
 Route::post('/delete', function (\Illuminate\Http\Request $request) {
     $Grade = Grade::find($request->all()['grade_id']);
-    if (! $Grade instanceof $Grade) {
+    if (! $Grade instanceof Grade) {
         throw new Exception('Grade Record not found');
     }
 
