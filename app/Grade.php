@@ -8,11 +8,11 @@ class Grade extends Model
 {
     public function student()
     {
-        return $this->belongsTo('App\Student')->get()->all()[0];
+        return $this->belongsTo('App\Student')->get()[0];
     }
 
     public function course()
     {
-        return $this->belongsTo('App\Course')->get()->all()[0];
+        return $this->belongsTo('App\Course')->get()[0];
     }
 }
