@@ -9,8 +9,10 @@
 
 
     <link rel='stylesheet' href="{{ URL::asset('/css/stylesheet.css') }}">
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+
     <script type="text/javascript" src="{{ URL::asset('/js/angular.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('/js/docReady.js') }}"></script>
 
