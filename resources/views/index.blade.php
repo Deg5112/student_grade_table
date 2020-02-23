@@ -8,13 +8,13 @@
     <!--<script src="script.js"></script>-->
 
 
-    <link rel='stylesheet' href="{{ URL::asset('/css/stylesheet.css') }}">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-resource.js"></script>
+    <link rel='stylesheet' href="{{ URL::asset('/public/css/stylesheet.css') }}">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-resource.js"></script>
 
-    <script type="text/javascript" src="{{ URL::asset('/js/angular.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('/js/docReady.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('/public/js/angular.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('/public/js/docReady.js') }}"></script>
 
 
 </head>
