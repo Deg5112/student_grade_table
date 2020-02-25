@@ -24,13 +24,7 @@
         <div ng-controller="mainController as mc" class="container">
             <div class="row container-fluid">
                 <!-- only show this element when the isnt on mobile -->
-                <h1 class="hidden-xs">Student Grade Table
-                    <small class="pull-right">Grade Average : <span class="avgGrade label label-default">&nbsp;{{average}}</span></small>
-                </h1>
-                <!-- only show this element when the user gets to a mobile version -->
-                <h3 class = 'visible-xs col-xs-12'>Student Grade Table
-                    <small class="col-xs-7 pull-right" >Grade Average : <span class="avgGrade label label-default">&nbsp;</span></small>
-                </h3>
+                <h1 class="hidden-xs">Student Grade Table</h1>
             </div>
             <hr>
             <form role="form" class="student-add-form col-sm-4 pull-right" ng-controller="formController as fc">
