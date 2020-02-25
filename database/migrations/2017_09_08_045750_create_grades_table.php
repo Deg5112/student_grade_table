@@ -17,6 +17,7 @@ class CreateGradesTable extends Migration
             $table->increments('id');
             $table->integer('grade');
             $table->integer('student_id');
+            $table->integer('course_id');
             $table->timestamps();
         });
     }
