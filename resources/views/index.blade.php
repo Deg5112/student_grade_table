@@ -25,6 +25,7 @@
             <div class="row container-fluid">
                 <!-- only show this element when the isnt on mobile -->
                 <h1 class="hidden-xs">Student Grade Table</h1>
+                <h3 class='visible-xs col-xs-12'>Student Grade Table</h3>
             </div>
             <hr>
             <form role="form" class="student-add-form col-sm-4 pull-right" ng-controller="formController as fc">
