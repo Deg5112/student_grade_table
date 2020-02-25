@@ -3,6 +3,7 @@ var app = angular.module('SGT', []);
 app.service('calcService', function($q){
 	var self = this;
 	self.average = null;
+
 	self.updateAverage = function(array){
 		var gradeSum = 0;
 		var average = null;
@@ -19,7 +20,7 @@ app.service('calcService', function($q){
 		average = Math.round(gradeSum/array.length);
 		//display grade Avg on screen
 		self.average = average;
-		
+
 	};
 });
 
@@ -31,7 +32,7 @@ app.controller('formController', function($scope, apiCall, $log, calcService){
 				$scope.studentObject.id = response.data.new_id;
 				$scope.studentArray.unshift($scope.studentObject);
 				$scope.studentObject = {};
-				
+
 				calcService.updateAverage($scope.studentArray);
 			}
 		});
@@ -43,9 +44,9 @@ app.controller('tableController', function($scope, apiCall, calcService, $log){
 	$scope.fieldName = null;
 	$scope.reverse = false;
 	$scope.searchText = null;
-	
+
 	self.delete = function(gradeId, index){
-	
+
 		apiCall.delete(gradeId).then(function(response){
 			if(response.data.success){
 				$scope.studentArray.splice(index, 1);
@@ -53,7 +54,7 @@ app.controller('tableController', function($scope, apiCall, calcService, $log){
 			}
 		});
 	};
-	
+
 	//filter controlls
 	self.sort = function(headerClickedString){
 		$scope.fieldName = headerClickedString;
@@ -63,7 +64,7 @@ app.controller('tableController', function($scope, apiCall, calcService, $log){
 
 app.service('apiCall', function($http, $q){
 	var self = this;
-	
+
 	self.getAll = function(){
 		var defer = $q.defer();
 		$http({
@@ -72,13 +73,13 @@ app.service('apiCall', function($http, $q){
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		}).then(function(response){
 			defer.resolve(response);
-			
+
 		}, function(response){
 			defer.reject(response);
 		});
 		return defer.promise;
 	};
-	
+
 	self.delete = function(gradeId){
 		self.defer = $q.defer();
 		$http({
@@ -90,14 +91,14 @@ app.service('apiCall', function($http, $q){
 		}, function(response){
 			self.defer.reject(response);
 		});
-		
+
 		return self.defer.promise;
 	};
-	
+
 	self.addStudentToDatabase = function (name, course, grade) {
 		var defer = $q.defer();
 		var promise = null;
-		
+
 		$http({
 			method: 'POST',
 			url: '/create',
@@ -117,8 +118,8 @@ app.controller('mainController', function($scope, apiCall, calcService){
 	$scope.average = null;
 	$scope.studentObject = {};
 	$scope.studentArray = [];
-	
-	
+
+
 	self.getStudents = function(){
 		apiCall.getAll().then(function(response){
 			var length = response.data.length;
@@ -128,15 +129,14 @@ app.controller('mainController', function($scope, apiCall, calcService){
 			calcService.updateAverage($scope.studentArray);
 		});
 	};
-	
+
 	self.returnStudentArrayForNgRepeat = function(){
 		return $scope.studentArray;
 	};
-	
+
 	self.returnCurrentAverage = function(){
-		console.log('scope average' + ' ' + $scope.average);
 		return calcService.average;
 	};
-	
+
 	self.getStudents();
 });

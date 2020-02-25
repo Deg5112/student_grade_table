@@ -25,7 +25,7 @@
             <div class="row container-fluid">
                 <!-- only show this element when the isnt on mobile -->
                 <h1 class="hidden-xs">Student Grade Table
-                    <small class="pull-right">Grade Average : <span class="avgGrade label label-default">&nbsp;{{mc.returnCurrentAverage()}}</span></small>
+                    <small class="pull-right">Grade Average : <span class="avgGrade label label-default">&nbsp;{{average}}</span></small>
                 </h1>
                 <!-- only show this element when the user gets to a mobile version -->
                 <h3 class = 'visible-xs col-xs-12'>Student Grade Table
