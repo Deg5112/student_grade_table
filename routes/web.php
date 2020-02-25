@@ -52,9 +52,9 @@ Route::post('/create', function (\Illuminate\Http\Request $request) {
     $Grade->grade = (int)$input['grade'];
     $Grade->student_id = $Student->id;
     $Grade->course_id = $Course->id;
-    $Grade->save();
+    $Grade = tap($Grade)->save();
 
-    return response()->json(['success' => true]);
+    return response()->json(['success' => true, 'new_id' => $Grade->id]);
 });
 
 Route::post('/delete', function (\Illuminate\Http\Request $request) {
